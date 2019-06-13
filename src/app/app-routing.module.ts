@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   { path: "tabs", loadChildren: "./pages/tabs/tabs.module#TabsPageModule" },
-  { path: "", redirectTo: "jogos", pathMatch: "full" },
+  { path: "", redirectTo: "tabs", pathMatch: "full" },
   {
     path: "artilheiro",
     loadChildren: "./pages/artilheiro/artilheiro.module#ArtilheiroPageModule"
