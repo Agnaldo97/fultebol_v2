@@ -9,12 +9,6 @@ import { Http } from "@angular/http";
 export class ResultadoRest {
   private baseURL = "http://www.futeboldospais.com.br/campeonato2018/json/";
   private sufix = ".txt";
-  private headers: any = new Headers({
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
-    "Access-Control-Allow-Headers": "X-Requested-With,content-type"
-  });
 
   constructor(public http: Http) {
     console.log("Hello ArtilheirosProvider Provider");

@@ -21,87 +21,9 @@
   </ion-card>
 </ion-header>
 
-<ion-content class="fund" [ngSwitch]="categoria">
-  <ion-card class="transparente" *ngSwitchCase="'Todos'">
-    <ion-list *ngFor="let resul of results">
-      <ion-row>
-        <ion-col col-12>
-          <ion-item style="text-align: center;margin:2px">
-            <ion-col col-6>
-              <img
-                class="img-esq"
-                src="assets/imgs/equipe/{{ resul.equipe1 }}.png"
-              />
-              <span padding-left="50px" style="color:#000033"
-                >{{ resul.equipe1 }}
-                <b>{{ resul.golsEquipe1 }}</b>
-              </span>
-            </ion-col>
-            <span style="color:#000033">x</span>
-            <ion-col col-6>
-              <span style="color:#000033">
-                <b> {{ resul.golsEquipe2 }}</b> {{ resul.equipe2 }}
-              </span>
-              <img
-                class="img-dir"
-                src="assets/imgs/equipe/{{ resul.equipe2 }}.png"
-              />
-            </ion-col>
-
-            <p>
-              {{ resul.data }} {{ resul.horario }}
-              <br />
-              <span style="color:#488aff">
-                <b>{{ resul.categoria }}</b>
-              </span>
-            </p>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-list>
-  </ion-card>
-
-  <ion-card class="transparente" *ngSwitchCase="'Senior'">
-    <ion-list *ngFor="let resul of results | slice: 0:8">
-      <ion-row>
-        <ion-col col-12>
-          <ion-item style="text-align: center;margin:2px">
-            <ion-col col-6>
-              <img
-                class="img-esq"
-                src="assets/imgs/equipe/{{ resul.equipe1 }}.png"
-              />
-              <span padding-left="50px" style="color:#000033"
-                >{{ resul.equipe1 }}
-                <b>{{ resul.golsEquipe1 }}</b>
-              </span>
-            </ion-col>
-            <span style="color:#000033">x</span>
-            <ion-col col-6>
-              <span style="color:#000033">
-                <b> {{ resul.golsEquipe2 }}</b> {{ resul.equipe2 }}
-              </span>
-              <img
-                class="img-dir"
-                src="assets/imgs/equipe/{{ resul.equipe2 }}.png"
-              />
-            </ion-col>
-
-            <p>
-              {{ resul.data }} {{ resul.horario }}
-              <br />
-              <span style="color:#488aff">
-                <b>{{ resul.categoria }}</b>
-              </span>
-            </p>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-list>
-  </ion-card>
-
-  <ion-card class="transparente" *ngSwitchCase="'Master'">
-    <ion-list *ngFor="let resul of results | slice: 0:8">
+<ion-content class="fundo">
+  <ion-card>
+    <ion-list class="transparente" *ngFor="let resul of results">
       <ion-row>
         <ion-col col-12>
           <ion-item style="text-align: center;margin:2px">

@@ -9,12 +9,6 @@ import { Observable } from "rxjs";
 })
 export class JogosPage implements OnInit {
   public categoria: String;
-  public lista = new Array<any>();
-  public lista2 = new Array<any>();
-  public lista3 = new Array<any>();
-  public listaTodos = new Array<any>();
-  public listaMaster = new Array<any>();
-  public listaSenior = new Array<any>();
   results: Observable<any>;
 
   constructor(private service: ResultadoRest) {}
@@ -22,17 +16,12 @@ export class JogosPage implements OnInit {
   ionViewDidLoad() {}
 
   ngOnInit() {
-    this.categoria = "Todos";
     this.carregar("Todos");
   }
 
   async carregar(env) {
     this.categoria =
-      env.detail === undefined && env === "Todos"
-        ? this.categoria
-        : env.detail.value;
-    console.log("Teste", this.categoria);
-
+      env.detail === undefined && env === "Todos" ? "Todos" : env.detail.value;
     if (this.categoria === "Todos") {
       this.results = await this.service.listaJogos();
     }

@@ -8,14 +8,13 @@
   text-align: center;
 }
 .fundo {
-  --background: url("../../../assets/imgs/fundo1.2.jpg") no-repeat 100% 100%;
+  --background: url("../../../assets/imgs/fundo1.2.jpg") !important;
   //background-repeat: no-repeat;//
   background-size: 360px;
   margin-top: -10px;
 }
 
 .img-esq {
-  position: absolute;
   width: 28px;
   height: 22px;
   float: left;
@@ -32,7 +31,7 @@
 }
 
 .transparente {
-  --background: transparent;
+  background: transparent;
   //background: transparent;
   margin-left: 8px;
 }
