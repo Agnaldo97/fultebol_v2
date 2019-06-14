@@ -29,6 +29,15 @@ const routes: Routes = [
             loadChildren: "../jogos/jogos.module#JogosPageModule"
           }
         ]
+      },
+      {
+        path: "equipes",
+        children: [
+          {
+            path: "",
+            loadChildren: "../equipe/equipe.module#EquipePageModule"
+          }
+        ]
       }
     ]
   }

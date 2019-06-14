@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>equipe</ion-title>
+    <ion-title>EQUIPES</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card class="card-equipe">
+    <ion-list class="equipe-lista" *ngFor="let equi of listaGeral">
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>
+            <span class="nome">{{ equi.equipe }}</span>
+          </ion-label>
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-item>
+        <ion-item-options>
+          <!--<p>Pontos {{equi.pontosGanhos}}</p>-->
+          <button ion-button (click)="abreDetalhe(equi.equipe)">
+            ••• <br />Mais
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-card>
 </ion-content>
