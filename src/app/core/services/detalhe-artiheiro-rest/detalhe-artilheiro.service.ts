@@ -7,7 +7,7 @@ import { Config } from "../config-rest/config-teste.service";
 @Injectable({
   providedIn: "root"
 })
-export class ClassificacaoGeral {
+export class DetalheArtilheiro {
   private baseURL = "http://www.futeboldospais.com.br/campeonato";
   private sufix = ".txt";
 

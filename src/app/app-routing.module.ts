@@ -16,7 +16,9 @@ const routes: Routes = [
   {
     path: "tabela",
     loadChildren: "./pages/tabela/tabela.module#TabelaPageModule"
-  }
+  },
+  { path: 'detalhe-artilheiro', loadChildren: './pages/detalhe-artilheiro/detalhe-artilheiro.module#DetalheArtilheiroPageModule' },
+  { path: 'detalhe-equipe', loadChildren: './pages/detalhe-equipe/detalhe-equipe.module#DetalheEquipePageModule' }
 ];
 
 @NgModule({
