@@ -10,30 +10,33 @@ import { Observable } from "rxjs";
 export class JogosPage implements OnInit {
   public categoria: String;
   results: Observable<any>;
+  resultsWithOutFilter: any;
 
   constructor(private service: ResultadoRest) {}
 
   ionViewDidLoad() {}
 
   ngOnInit() {
-    this.carregar("Todos");
+    this.carregar();
   }
 
-  async carregar(env) {
-    this.categoria =
-      env.detail === undefined && env === "Todos" ? "Todos" : env.detail.value;
+  async carregar() {
+    this.results = await this.service.listaJogos();
+    this.resultsWithOutFilter = this.results;
+  }
+
+  async buscar(env) {
+    this.categoria = env.detail.value;
     if (this.categoria === "Todos") {
-      this.results = await this.service.listaJogos();
+      this.results = this.resultsWithOutFilter;
     }
     if (this.categoria === "Master") {
-      let listMaster: any = await this.service.listaJogos();
-      this.results = listMaster.filter(
+      this.results = this.resultsWithOutFilter.filter(
         resultado => resultado.categoria === "Master"
       );
     }
     if (this.categoria === "Senior") {
-      let listSeniot: any = await this.service.listaJogos();
-      this.results = listSeniot.filter(
+      this.results = this.resultsWithOutFilter.filter(
         resultado => resultado.categoria === "Senior"
       );
     }
