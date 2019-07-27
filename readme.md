@@ -3,7 +3,7 @@
 
 > Esse projeto tem como finalidade proporcionar aos jogadores uma visão mais clara do campeonato
 
-##Tela inicial do sistema:
+## Tela inicial do sistema:
 
 ![](header.png)
 
