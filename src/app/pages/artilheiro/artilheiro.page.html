@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>artilheiro</ion-title>
+    <ion-title>Artilheiro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card class="card-artilheiro">
+    <ion-list class="artilheiro-lista" *ngFor="let ar of listaGeral">
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>
+            <span class="nome">{{ ar.nome }}</span>
+          </ion-label>
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-item>
+        <ion-item-options>
+          <!--<p>Pontos {{equi.pontosGanhos}}</p>-->
+          <button ion-button (click)="showDetail(ar.nome)">
+            ••• <br />Mais
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-card>
 </ion-content>

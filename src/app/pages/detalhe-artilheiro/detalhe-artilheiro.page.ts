@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { NavParams } from "@ionic/angular";
+import { ArtilhariaRest } from "../../core/services/artilharia-rest/artilharia-rest.service";
 
 @Component({
   selector: "app-detalhe-artilheiro",
@@ -11,12 +11,30 @@ export class DetalheArtilheiroPage implements OnInit {
   lista = new Array<any>();
   artilheiros: string[];
   listaJogador = new Array<any>();
+  geral = new Array<any>();
+  constructor(
+    private serviceArtilheiro: ArtilhariaRest
+  ) {
+    this.jogador = localStorage.getItem("artilheiro");
+  }
+  ngOnInit() {
+    //Consumo Detalhe Artilheiro
+    this.abrirDetalhes();
+    // this.carregarClassificacaoGeral();
+  }
 
-  constructor(public navParams: NavParams) {
-    this.jogador = this.navParams.get("jogador");
+  async abrirDetalhes() {
+    let response: any = await this.serviceArtilheiro.listarArtilheiros();
+    this.listaJogador = response.filter(
+      jogador => jogador.nome === this.jogador
+    );
+    console.log(this.listaJogador)
   }
-  ionViewDidLoad() {
-    // this.carregasDetalhes();
-  }
-  ngOnInit() {}
+
+  // async carregarClassificacaoGeral() {
+  //   let response: any = await this.serviceClassificacao.listarGeral();
+  //   this.geral = response.filter(
+  //     listaGeral => listaGeral.equipe === this.artilhjogadoreiro
+  //   );
+  // }
 }

@@ -28,7 +28,7 @@ export class DetalheEquipePage implements OnInit {
   }
 
   async abrirDetalhes() {
-    let response: any = await this.serviceArtilheiro.listarArtilheiro();
+    let response: any = await this.serviceArtilheiro.listarArtilheiros();
     this.listaEquipe = response.filter(
       listaEquipe => listaEquipe.equipe === this.equipe
     );

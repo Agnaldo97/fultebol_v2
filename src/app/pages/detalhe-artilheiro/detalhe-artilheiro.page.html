@@ -1,9 +1,77 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detalhe-artilheiro</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/artilheiros"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Jogador {{ jogador }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card class="card-artilheiro" *ngFor="let art of listaJogador">
+    <h2 >
+      Jogador: <b class='black'>{{ art.nome }}</b>
+    </h2>
+    <h2 class="topo-card">
+      Indicadores
+    </h2>
+    <br>
+    <ion-grid class="tabela">
+      <ion-row>
+        <ion-col no-padding class="iconP">
+          Car. Amarelhos: <b class='black'>{{ art.cartoesAmarelos }}</b>
+        </ion-col>
+        <ion-col no-padding class="iconC">
+          Car. Vermelhos: <b class='black'>{{ art.cartoesVermelhos }}</b>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-col no-padding class="iconP">
+          Posição: <b class='black'>{{ art.posicao }}</b>
+        </ion-col>
+        <ion-col no-padding class="iconC">
+          Gols: <b class='black'>{{ art.gols }}</b> 
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-col no-padding class="iconP">
+          Numero: <b class='black'>{{ art.numero }}</b>
+        </ion-col>
+        <ion-col no-padding class="iconC">
+          Equipe : <b class='black'>{{ art.equipe }}</b>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-col no-padding class="iconP">
+          Categora: <b class='black'>{{ art.categoria }}</b>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- <ion-grid>
+      <ion-row>
+        <ion-col col-12 class="iconC">
+          <h2><b>Cartões</b></h2>
+          <h2>Amarelos: {{art.cartoesAmarelos}}</h2>
+          <h2>Vermelhos: {{art.cartoesVermelhos}}</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 class="iconPos">
+          <h2>
+            <b>Gols:</b>
+            {{art.gols}}</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 class="iconPos">
+          <h2>
+            <b>Posição:</b>
+            {{art.posicao}}</h2>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+  </ion-card>
 </ion-content>

@@ -38,6 +38,15 @@ const routes: Routes = [
             loadChildren: "../equipe/equipe.module#EquipePageModule"
           }
         ]
+      },
+      {
+        path: "artilheiros",
+        children: [
+          {
+            path: "",
+            loadChildren: "../artilheiro/artilheiro.module#ArtilheiroPageModule"
+          }
+        ]
       }
     ]
   }

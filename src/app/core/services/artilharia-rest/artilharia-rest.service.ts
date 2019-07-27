@@ -19,7 +19,7 @@ export class ArtilhariaRest {
     return this.http.get(this.baseURL + "artilheiros" + this.sufix);
   }
 
-  async listarArtilheiro() {
+  async listarArtilheiros() {
     const config = await this.config.getConfig();
     const response: any = await new Promise((resolve, reject) => {
       this.http
